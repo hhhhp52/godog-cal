@@ -24,7 +24,7 @@ func (c *Cal) Press(x int) {
 	c.result = x
 }
 
-func (c *Cal) Clear(x int) {
+func (c *Cal) Clear() {
 	c.result = 0
 }
 

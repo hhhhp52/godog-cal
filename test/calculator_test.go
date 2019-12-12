@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/DATA-DOG/godog"
-	calc "github.com/hhhhp52/godog-cal/calculate"
+	calc "github.com/hhhhp52/godog-cal"
 )
 
 type CalcSuite struct {
@@ -40,8 +40,9 @@ func (cs *CalcSuite) theResultShouldBe(num int) error {
 	return fmt.Errorf("%d doesn't match expectation: %d", result, num)
 }
 
-func (cs *CalcSuite) iMultiplyBy(factor int) error {
-	return cs.calc.MultiplyBy(factor)
+func (cs *CalcSuite) iMultiplyBy(num int) error {
+	cs.calc.MultipleBy(num)
+	return nil
 }
 
 func FeatureContext(suite *godog.Suite) {
